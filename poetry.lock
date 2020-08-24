@@ -150,12 +150,16 @@ description = "Fake DataFrame generators for Pandas and PySpark"
 name = "farsante"
 optional = false
 python-versions = ">=3.6.1"
-version = "0.1.0"
+version = "0.2.0"
 
 [package.dependencies]
 mimesis = ">=4.0.0,<5.0.0"
 pandas = ">=1.0.0"
 pyspark = ">=2.0.0"
+
+[package.dependencies.dask]
+extras = ["dataframe"]
+version = ">=2.23.0,<3.0.0"
 
 [[package]]
 category = "main"
@@ -514,7 +518,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "c3fbccc7bec9422c43f6d0a2ac23194dd2919c4b60ed55a0b337e1ff305079a3"
+content-hash = "338ac6084ce13a92fe958129b77329323334b81c12ab9782c5698fbf5f726f10"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -550,8 +554,8 @@ distributed = [
     {file = "distributed-2.24.0.tar.gz", hash = "sha256:1278ba2d4881cdfc43533e7f37da33e4b0448ce038917513efd68b6d9446a98e"},
 ]
 farsante = [
-    {file = "farsante-0.1.0-py3-none-any.whl", hash = "sha256:00729a71329c241dac06abeebdc66fe8f49e1efc532d40171f1fa56e33a98f53"},
-    {file = "farsante-0.1.0.tar.gz", hash = "sha256:a44ee03f24ef11a8cc3fc8e60c43b22630783d903c8a158c6d88d7568d7b6ce3"},
+    {file = "farsante-0.2.0-py3-none-any.whl", hash = "sha256:7ab8ad587fca218658dca3520ca96dbf2ec9cca6afe806d590e14304faf5d023"},
+    {file = "farsante-0.2.0.tar.gz", hash = "sha256:f4d33b91defa314f371a18514f496eec3a836f62b4e0f0db8cb0c180e32eedf7"},
 ]
 fsspec = [
     {file = "fsspec-0.8.0-py3-none-any.whl", hash = "sha256:ce109f41ffe62853d5de84888f3e455c39f2a0796c05b558474c77156e19b570"},

@@ -7,8 +7,8 @@ authors = ["MrPowers <matthewkevinpowers@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 dask = {extras = ["complete"], version = "^2.24.0"}
-farsante = "^0.1.0"
 pyarrow = "^1.0.1"
+farsante = "^0.2.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
