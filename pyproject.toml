@@ -9,6 +9,8 @@ python = "^3.7"
 dask = {extras = ["complete"], version = "^2.24.0"}
 pyarrow = "^1.0.1"
 farsante = "^0.2.0"
+jupyter = "^1.0.0"
+ipykernel = "^5.3.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

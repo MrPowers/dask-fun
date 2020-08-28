@@ -3,6 +3,9 @@ import pytest
 import pyarrow.csv as pv
 import pyarrow.parquet as pq
 
+import os
+os.makedirs('./tmp/pyarrow_out', exist_ok=True)
+
 
 def test_pyarrow_compression():
     table = pv.read_csv('./data/people/people1.csv')
@@ -24,7 +27,9 @@ def test_pyarrow_statistics():
     table = pv.read_csv('./data/pets/pets1.csv')
     pq.write_table(table, './tmp/pyarrow_out/pets1.parquet')
     parquet_file = pq.ParquetFile('./tmp/pyarrow_out/pets1.parquet')
-    # print(parquet_file.metadata.row_group(0).column(1).statistics)
+    stats = parquet_file.metadata.row_group(0).column(1).statistics
+    assert stats.min == 1
+    assert stats.max == 9
 
 
 

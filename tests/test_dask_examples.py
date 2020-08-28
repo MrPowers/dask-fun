@@ -1,4 +1,4 @@
-from dask_examples import __version__
+from daskfun import __version__
 
 
 def test_version():
