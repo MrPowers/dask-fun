@@ -2,6 +2,7 @@ import pytest
 
 import pyarrow.csv as pv
 import pyarrow.parquet as pq
+import pyarrow
 
 import os
 os.makedirs('./tmp/pyarrow_out', exist_ok=True)
@@ -32,5 +33,20 @@ def test_pyarrow_statistics():
     assert stats.max == 9
 
 
-
+def test_add_custom_metadata():
+    table = pv.read_csv('./data/pets/pets1.csv')
+    # print('')
+    # print(table.schema.metadata)
+    # s2 = table.schema.with_metadata({b'say_hi': b'hola'})
+    # print(s2.metadata)
+    custom_metadata = {'sample_number': '12', 'date_obtained': 'Tuesday'}
+    existing_metadata = table.schema.metadata
+    merged_metadata = { **custom_metadata, **(existing_metadata or {}) }
+    fixed_table = table.replace_schema_metadata(merged_metadata)
+    pyarrow.parquet.write_table(fixed_table, './tmp/pyarrow_out/pets_with_metadata.parquet')
+    parquet_table = pq.read_table('./tmp/pyarrow_out/pets_with_metadata.parquet')
+    print(parquet_table.schema.metadata[b'sample_number'])
+    # parquet_file = pq.ParquetFile('./tmp/pyarrow_out/pets_with_metadata.parquet')
+    # print(parquet_file.schema_arrow)
+    # print(parquet_file.schema.metadata)
 

@@ -13,3 +13,6 @@ __pycache__/
 *.py[cod]
 
 .pytest_cache/
+
+notebooks/pyarrow/.ipynb_checkpoints
+notebooks/pyarrow/*.parquet
