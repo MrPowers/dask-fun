@@ -2,6 +2,7 @@ import pytest
 
 from daskfun.csvs_to_parquet import *
 
+
 def test_convert_csvs_to_parquet2():
     convert_csvs_to_parquet2()
 

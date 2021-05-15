@@ -6,14 +6,17 @@ authors = ["MrPowers <matthewkevinpowers@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-dask = {extras = ["complete"], version = "^2.24.0"}
+dask = {extras = ["complete"], version = "2021.4.1"}
 pyarrow = "^1.0.1"
-farsante = "^0.2.0"
+#farsante = "^0.2.0"
 jupyter = "^1.0.0"
 ipykernel = "^5.3.4"
+pyspark = "^3.1.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+black = "^21.5b1"
+pytest-describe = "^1.0.0"
 
 [build-system]
 requires = ["poetry>=0.12"]
